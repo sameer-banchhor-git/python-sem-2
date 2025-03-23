@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0056b3;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #0056b3;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    h3 {
+      color: #0056b3;
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    code {
+      background-color: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      display: block;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .rationale {
+      font-style: italic;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ddd;
+      margin-top: 30px;
+      border-radius: 0 0 8px 8px;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Code </h1>
+
+    <h2>Easy </h2>
+
+    <h3> 1. Even or Odd</h3>
+    <p><strong>Description:</strong> A program to check whether the input number is even or odd.</p>
+    <p class="rationale">Rationale: Basic use of the modulo operator (%). Straightforward conditional logic.</p>
+    <pre><code class="language-python">
+def is_even_or_odd(number):
+    if number % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+# Example usage
+num = 10
+result = is_even_or_odd(num)
+print(f"{num} is {result}")
+    </code></pre>
+
+    <h3> 2. Palindrome Check</h3>
+    <p><strong>Description:</strong> A function that takes a string input and checks if it is a palindrome or not.</p>
+    <p class="rationale">Rationale: Requires string manipulation (reversing) and comparison. Not too complex.</p>
+    <pre><code class="language-python">
+def is_palindrome(text):
+    processed_text = text.lower().replace(" ", "")
+    return processed_text == processed_text[::-1]
+
+# Example usage
+word = "Racecar"
+if is_palindrome(word):
+    print(f"'{word}' is a palindrome.")
+else:
+    print(f"'{word}' is not a palindrome.")
+    </code></pre>
+
+    <h3> 3. Leap Year Check</h3>
+    <p><strong>Description:</strong> A program that reads an integer value and prints whether it is a leap year or not.</p>
+    <p class="rationale">Rationale: Simple conditional logic based on leap year rules (divisible by 4, 100, 400).</p>
+    <pre><code class="language-python">
+def is_leap_year(year):
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    else:
+        return False
+
+# Example usage
+year = 2024
+if is_leap_year(year):
+    print(f"{year} is a leap year.")
+else:
+    print(f"{year} is not a leap year.")
+    </code></pre>
+
+    <h3> 4. Largest of Three Numbers</h3>
+    <p><strong>Description:</strong> A program to compare three numbers and print the largest one.</p>
+    <p class="rationale">Rationale: Uses basic comparison operators and if/else statements.</p>
+    <pre><code class="language-python">
+def find_largest(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+
+# Example usage
+num1, num2, num3 = 10, 5, 20
+largest = find_largest(num1, num2, num3)
+print(f"The largest number is: {largest}")
+    </code></pre>
+
+    <h3> 5. Factorial Calculation</h3>
+    <p><strong>Description:</strong> A function that takes an integer input and calculates the factorial of that number.</p>
+    <p class="rationale">Rationale: Basic iterative (or recursive) function. Well-defined mathematical concept.</p>
+    <pre><code class="language-python">
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        result = 1
+        for i in range(1, n + 1):
+            result *= i
+        return result
+
+# Example usage
+number = 5
+fact = factorial(number)
+print(f"The factorial of {number} is {fact}")
+    </code></pre>
+
+    <h3> 6. String to List Conversion</h3>
+    <p><strong>Description:</strong> A function to convert a string into a list, for example, list("abc") gives ['a', 'b', 'c'].</p>
+    <p class="rationale">Rationale: In many languages this is a one-line conversion. Conceptually simple.</p>
+    <pre><code class="language-python">
+def string_to_list(s):
+    return list(s)
+
+# Example usage
+my_string = "abc"
+my_list = string_to_list(my_string)
+print(f"The list from the string '{my_string}' is: {my_list}")
+    </code></pre>
+
+    <h3> 7. Factors of a Number</h3>
+    <p><strong>Description:</strong> A program to print the factors of a given number.</p>
+    <p class="rationale">Rationale: Iterating from 1 to the number and using the modulo operator.</p>
+    <pre><code class="language-python">
+def print_factors(number):
+    print(f"The factors of {number} are:")
+    for i in range(1, number + 1):
+        if number % i == 0:
+            print(i)
+
+# Example usage
+num = 12
+print_factors(num)
+    </code></pre>
+
+    <h2>Medium </h2>
+
+    <h3> 1. n Lines of Output</h3>
+    <p><strong>Description:</strong> Write a program that takes a positive integer and then produces n lines of output. For simplicity, we'll print the line number on each line.</p>
+    <p class="rationale">Rationale: This is intentionally vague and therefore medium. The complexity depends on what it's supposed to do on each line.</p>
+    <pre><code class="language-python">
+def print_n_lines(n):
+    for i in range(1, n + 1):
+        print(f"Line {i}")
+
+# Example usage
+print_n_lines(5)
+    </code></pre>
+
+    <h3> 2. Fibonacci Sequence</h3>
+    <p><strong>Description:</strong> Write a program to generate the Fibonacci sequence up to a certain number of terms.</p>
+    <p class="rationale">Requires understanding the Fibonacci sequence and implementing it either iteratively or recursively. Slightly more involved than basic loops.</p>
+    <pre><code class="language-python">
+def fibonacci_sequence(n):
+    fib_list = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_list.append(a)
+        a, b = b, a + b
+    return fib_list
+
+# Example usage
+num_terms = 10
+fib_seq = fibonacci_sequence(num_terms)
+print(f"Fibonacci sequence: {fib_seq}")
+    </code></pre>
+
+    <h3> 3. 1 + 1/1! + 1/2! + ... + 1/n!</h3>
+    <p><strong>Description:</strong> Write a function that takes an integer n as input and calculates the value of 1 + 1/1! + 1/2! + ... + 1/n!</p>
+    <p class="rationale">Requires understanding factorials (from the "easy" problem) and combining it with a loop and division.</p>
+    <pre><code class="language-python">
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        result = 1
+        for i in range(1, n + 1):
+            result *= i
+        return result
+
+def calculate_series(n):
+    sum = 1.0  # Start with 1 (for 1/0!)
+    for i in range(1, n + 1):
+        sum += 1.0 / factorial(i)
+    return sum
+
+# Example usage
+n_value = 5
+series_value = calculate_series(n_value)
+print(f"The value of the series is: {series_value}")
+    </code></pre>
+
+    <h3> 4. Greatest Common Divisor (GCD)</h3>
+    <p><strong>Description:</strong> Write a method to calculate the Greatest Common Divisor (GCD) of two numbers using the Euclidean algorithm.</p>
+    <p class="rationale">Requires understanding the GCD concept (Euclidean Algorithm). A bit of mathematical thinking.</p>
+    <pre><code class="language-python">
+def gcd(a, b):
+    while(b):
+        a, b = b, a % b
+    return a
+
+# Example usage
+num1 = 48
+num2 = 18
+gcd_value = gcd(num1, num2)
+print(f"The GCD of {num1} and {num2} is: {gcd_value}")
+    </code></pre>
+
+    <h3> 5. Pattern Printing (Simple Triangle)</h3>
+    <p><strong>Description:</strong> Write a program to create the following pattern: A simple right-angled triangle.</p>
+    <p class="rationale">More detail is needed (What is the pattern?). Pattern printing often involves nested loops and careful control of output.</p>
+    <pre><code class="language-python">
+def print_triangle(n):
+    for i in range(1, n + 1):
+        print("*" * i)
+
+# Example usage
+triangle_height = 5
+print_triangle(triangle_height)
+    </code></pre>
+
+    <h3> 6. Linear and Binary Search</h3>
+    <p><strong>Description:</strong> Write a program to implement linear and binary search on lists.</p>
+    <p class="rationale">Requires understanding the algorithms (linear is easy, binary is a bit more complex) and implementing them correctly. Binary search requires a sorted list.</p>
+    <pre><code class="language-python">
+def linear_search(list, target):
+    for i in range(len(list)):
+        if list[i] == target:
+            return i  # Return the index if found
+    return -1  # Return -1 if not found
+
+def binary_search(list, target):
+    left = 0
+    right = len(list) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if list[mid] == target:
+            return mid
+        elif list[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1  # Return -1 if not found
+
+# Example usage
+my_list = [2, 5, 7, 8, 11, 12]  # MUST be sorted for binary search
+target_value = 11
+
+linear_result = linear_search(my_list, target_value)
+binary_result = binary_search(my_list, target_value)
+
+print(f"Linear search result: Index {linear_result}")
+print(f"Binary search result: Index {binary_result}")
+    </code></pre>
+
+    <h2>Hard </h2>
+
+    <h3> 1. Stack Class</h3>
+    <p><strong>Description:</strong> Write a program to create a Stack class and implement all its methods (using lists).</p>
+    <p class="rationale">Requires understanding the Stack data structure (LIFO) and implementing it with its core methods (push, pop, peek, isEmpty) using lists. Focuses on object-oriented programming concepts.</p>
+    <pre><code class="language-python">
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if not self.isEmpty():
+            return self.items.pop()
+        else:
+            return None  # Or raise an exception
+
+    def peek(self):
+        if not self.isEmpty():
+            return self.items[-1]
+        else:
+            return None  # Or raise an exception
+
+    def isEmpty(self):
+        return len(self.items) == 0
+
+    def size(self):
+        return len(self.items)
+
+# Example usage
+my_stack = Stack()
+my_stack.push(1)
+my_stack.push(2)
+my_stack.push(3)
+
+print(f"Stack size: {my_stack.size()}")
+print(f"Top element: {my_stack.peek()}")
+print(f"Popped element: {my_stack.pop()}")
+print(f"Is stack empty? {my_stack.isEmpty()}")
+    </code></pre>
+
+    <h3> 2. Queue Class</h3>
+    <p><strong>Description:</strong> Write a program to create a Queue class and implement all its methods (using lists).</p>
+    <p class="rationale">Similar to Stack, but requires understanding the Queue data structure (FIFO) and its methods (enqueue, dequeue, peek, isEmpty).</p>
+    <pre><code class="language-python">
+class Queue:
+    def __init__(self):
+        self.items = []
+
+    def enqueue(self, item):
+        self.items.insert(0, item) #insert at beginning of list
+
+    def dequeue(self):
+        if not self.isEmpty():
+            return self.items.pop() #remove from the end of list
+        else:
+            return None  # Or raise an exception
+
+    def peek(self):
+        if not self.isEmpty():
+            return self.items[-1]
+        else:
+            return None  # Or raise an exception
+
+    def isEmpty(self):
+        return len(self.items) == 0
+
+    def size(self):
+        return len(self.items)
+
+# Example usage
+my_queue = Queue()
+my_queue.enqueue(1)
+my_queue.enqueue(2)
+my_queue.enqueue(3)
+
+print(f"Queue size: {my_queue.size()}")
+print(f"Front element: {my_queue.peek()}")
+print(f"Dequeued element: {my_queue.dequeue()}")
+print(f"Is queue empty? {my_queue.isEmpty()}")
+    </code></pre>
+
+    <h3> 3. Sorting Algorithms</h3>
+    <p><strong>Description:</strong> Write a program to sort a list using insertion sort, bubble sort, and selection sort.</p>
+    <p class="rationale">Requires understanding and implementing three different sorting algorithms. Each has its own logic and requires careful attention to detail to implement correctly. Also a good exercise in understanding algorithm efficiency.</p>
+    <pre><code class="language-python">
+def insertion_sort(list):
+    for i in range(1, len(list)):
+        key = list[i]
+        j = i - 1
+        while j >= 0 and key < list[j]:
+            list[j + 1] = list[j]
+            j -= 1
+        list[j + 1] = key
+    return list
+
+def bubble_sort(list):
+    n = len(list)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if list[j] > list[j + 1]:
+                list[j], list[j + 1] = list[j + 1], list[j]
+    return list
+
+def selection_sort(list):
+    n = len(list)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if list[j] < list[min_idx]:
+                min_idx = j
+        list[i], list[min_idx] = list[min_idx], list[i]
+    return list
+
+# Example usage
+my_list = [64, 34, 25, 12, 22, 11, 90]
+
+print(f"Original list: {my_list}")
+
+insertion_sorted_list = insertion_sort(my_list.copy()) #using .copy() to not modify original list.
+print(f"Insertion sorted list: {insertion_sorted_list}")
+
+bubble_sorted_list = bubble_sort(my_list.copy())
+print(f"Bubble sorted list: {bubble_sorted_list}")
+
+selection_sorted_list = selection_sort(my_list.copy())
+print(f"Selection sorted list: {selection_sorted_list}")
+    </code></pre>
+  </div>
+
+  <footer>
+    slimshadow org all right reserved
+  </footer>
+
+</body>
+</html>
